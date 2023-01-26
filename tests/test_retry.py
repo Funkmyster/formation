@@ -13,9 +13,8 @@ def fail(times):
         t = t - 1
         if t <= 0:
             return call(ctx)
-        else:
-            ctx["fail"] = t
-            raise RuntimeError("something is wrong")
+        ctx["fail"] = t
+        raise RuntimeError("something is wrong")
 
     return fail_middleware
 

@@ -51,9 +51,7 @@ def client(cls=None):
         cls.__init__ = init
         return cls
 
-    if cls:
-        return client_decorator(cls)
-    return client_decorator
+    return client_decorator(cls) if cls else client_decorator
 
 
 @attrs

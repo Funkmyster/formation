@@ -24,10 +24,7 @@ def get_test_stack(logger):
 
 
 def sanitize(d):
-    if d:
-        filtered = keyfilter(lambda k: k not in ["etag", "elapsed"], d)
-        return filtered
-    return d
+    return keyfilter(lambda k: k not in ["etag", "elapsed"], d) if d else d
 
 
 @pytest.mark.vcr()
